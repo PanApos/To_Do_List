@@ -1,0 +1,140 @@
+body {
+    font-family: "Libertinus Math", system-ui;
+    background-color: #f4f7f6;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    min-height: 100vh; 
+    margin: 0;
+    padding-top: 50px; 
+}
+
+.container {
+    background: linear-gradient(to bottom, #66ff33 19%, #3333ff 100%); 
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 500px; 
+    box-sizing: border-box; 
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    flex-grow: 1; 
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none; 
+}
+
+#taskInput:focus {
+    border-color: #4CAF50; 
+}
+
+#addTaskButton {
+    background: linear-gradient(to bottom, #ff99cc 9%, #0066ff 100%); 
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer; 
+    margin-left: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /
+}
+
+#addTaskButton:hover {
+    background: linear-gradient(to bottom, #0066ff 9%, #ff99cc 100%); 
+}
+
+#taskList {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    background-color: #e0f2f7; 
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 1.1em;
+    color: #555;
+    transition: background-color 0.3s ease;
+    word-wrap: break-word; 
+    line-height: 1.4;
+}
+
+#taskList li.completed {
+    background-color: #88f7a2; 
+    text-decoration: line-through; 
+    color: #888;
+}
+
+.delete-button {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 15px; 
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /
+}
+
+.delete-button:hover {
+    background-color: #da190b; 
+}
+
+/* Media Queries για καλύτερη εμφάνιση σε μικρότερες οθόνες */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #taskInput {
+        margin-bottom: 10px;
+        width: 100%; 
+    }
+
+    #addTaskButton {
+        width: 100%; 
+        margin-left: 0;
+    }
+    #taskList li {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .delete-button {
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+}
