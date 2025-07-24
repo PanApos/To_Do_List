@@ -10,10 +10,10 @@ body {
 }
 
 .container {
-    background: #F5F5F5;
+    background: #d8d6d6;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 10px 30px #000000;
     width: 100%;
     max-width: 500px; 
     box-sizing: border-box; 
@@ -29,13 +29,14 @@ h1 {
 .input-section {
     display: flex;
     margin-bottom: 25px;
+    gap: 10px;
 }
 
 #taskInput {
     flex-grow: 1; 
-    padding: 12px 0px;
+    padding: 12px 5px;
     border: 2px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1em;
     outline: none; 
 }
@@ -51,7 +52,6 @@ h1 {
     padding: 12px 20px;
     border-radius: 5px;
     cursor: pointer; 
-    margin-left: 10px;
     font-size: 1em;
     transition: background-color 0.3s ease; /
 }
@@ -68,11 +68,10 @@ h1 {
 
 #taskList li {
     background-color: #fff;
-    width: 420px; 
     height: 40px;
     display: flex;
     align-items: center;
-    padding-bottom:12px 20px;
+    padding:12px 20px;
     border-bottom: 5px solid#eee;
     border-radius: 7px;
     transition: background-color  0.3s ease;
@@ -147,7 +146,14 @@ h1 {
     #taskList li {
         padding: 10px;
     }
-
+    .container{
+        padding: 10px;
+        width: 95%;
+    } 
+   #taskInput{
+    padding: 1px;
+    width: 95%;
+   }
     .task-checkbox {
         margin-right: 10px;
     }
