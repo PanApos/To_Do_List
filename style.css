@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background: linear-gradient(to bottom, #66ff33 19%, #3333ff 100%); 
+    background: #F5F5F5;
     padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
@@ -63,21 +63,23 @@ h1 {
 #taskList {
     list-style: none; 
     padding: 0;
-    margin: 0;
+    margin-top: 20px;
 }
 
 #taskList li {
-    background-color: #e0f2f7; 
-    margin-bottom: 10px;
-    border-radius: 8px;
+    background-color: #fff;
+    width: 420px; 
+    height: 40px;
     display: flex;
-    justify-content: space-between; 
     align-items: center;
-    font-size: 1.1em;
-    color: #555;
-    transition: background-color 0.3s ease;
-    word-wrap: break-word; 
-    line-height: 1.4;
+    padding-bottom:12px 20px;
+    border-bottom: 5px solid#eee;
+    border-radius: 7px;
+    transition: background-color  0.3s ease;
+    
+}
+#taskList li:last-child {
+    border-bottom: none;
 }
 
 #taskList li.completed {
@@ -86,55 +88,77 @@ h1 {
     color: #888;
 }
 
+.task-checkbox {
+    margin-right: 15px; /* Απόσταση από το κείμενο */
+    width: 20px; /* Μέγεθος του checkbox */
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.task-checkbox:checked {
+    background-color: #4CAF50; 
+    border-color: #4CAF50;
+}
+
+.task-checkbox:checked::before {
+    content: '✔'; /*check icon*/
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 18px; 
+}
+
+.task-text {
+    flex-grow: 1; 
+    word-wrap: break-word; 
+    font-size: 1.1em;
+    color: #333;
+}
+
+#taskList li.completed .task-text {
+    text-decoration: line-through; 
+    color: #e90b0b; 
+}
+
 .delete-button {
     background-color: #f44336; 
-    color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 9px 12px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.8em;
-    margin-left: 15px; 
-    transition: background-color 0.3s ease;
-    flex-shrink: 0; /
+    font-size: 0.9em;
+    transition: background-color 0.3s ease; 
+    flex-shrink: 0; 
 }
 
 .delete-button:hover {
-    background-color: #da190b; 
+    background-color: #d32f2f; /
 }
 
 /* Media Queries για καλύτερη εμφάνιση σε μικρότερες οθόνες */
 @media (max-width: 600px) {
-    .container {
-        margin: 20px;
-        padding: 20px 25px;
-    }
-
-    h1 {
-        font-size: 1.8em;
-    }
-
-    .input-section {
-        flex-direction: column;
-    }
-
-    #taskInput {
-        margin-bottom: 10px;
-        width: 100%; 
-    }
-
-    #addTaskButton {
-        width: 100%; 
-        margin-left: 0;
-    }
     #taskList li {
-        flex-direction: column; 
-        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .task-checkbox {
+        margin-right: 10px;
+    }
+
+    .task-text {
+        font-size: 1em;
+        margin-right: 10px;
     }
 
     .delete-button {
-        margin-top: 10px;
-        margin-left: 0;
-        width: 100%;
+        padding: 6px 10px;
+        font-size: 0.85em;
     }
 }
